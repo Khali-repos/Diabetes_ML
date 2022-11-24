@@ -13,7 +13,7 @@ from streamlit_option_menu import option_menu
 
 #saved models
 
-loaded_model = pickle.load(open('C:/Users/Iyama/Desktop/ML/MLdiabetes/diabetes_model.sav', 'rb'))
+diabetes_model = pickle.load(open('C:/Users/Iyama/Desktop/ML/MLdiabetes/diabetes_model.sav', 'rb'))
 
 
 def diabetes_prediction(input_data):
@@ -26,7 +26,7 @@ def diabetes_prediction(input_data):
     # reshape the array as we are predicting for one instance
     input_data_reshaped = input_data_as_numpy_array.reshape(1,-1)
 
-    prediction = loaded_model.predict(input_data_reshaped)
+    prediction = diabetes_model.predict(input_data_reshaped)
     print(prediction)
 
     if (prediction[0] == 0):
